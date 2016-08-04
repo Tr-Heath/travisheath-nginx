@@ -21,8 +21,8 @@ The module should be able to be applied multiple times.
 ## Setup
 
 If you are going to use Vagrant to test, ensure that it is installed along with VirtualBox and the following plugins:
-vagrant plugin install vagrant-vbguest
-vagrant plugin install vagrant-hostmanager
+* vagrant plugin install vagrant-vbguest
+* vagrant plugin install vagrant-hostmanager
 
 Also take note of how much memory your host environment has. In the vagrantfile, the memory size has been set to 2048MB, more than the Vagrant defaults. Puppetserver has also been dropped to 512MB from 2GB, so that the VM can still operate. 
 
