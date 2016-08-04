@@ -52,7 +52,7 @@ If you add an entry to /etc/hosts on your host machine, you can go to vagrant-te
 ## Limitations
 
 This has been tested for CentOS only, although could easily be extended to RHEL by adding the official repo to /files
-and then commenting back in the section of the case statement in install.pp that checks for operating system.
+and then uncommenting the section of code in install.pp checking for RHEL.
 
 ## Development
 RSpec tests need to be brought back to the project in a way that all dependencies are deployed to the project as well. The project needs to robustly handle a greater variety of operating systems. 
