@@ -1,0 +1,15 @@
+{
+  "name": "travisheath-nginx",
+  "version": "0.1.0",
+  "author": "travisheath",
+  "summary": "Sample module to ensure an nginx web server is running and serving a specific site. Made for learning purposes.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/tr-heath/travisheath-nginx",
+  "project_page": "https://github.com/tr-heath/travisheath-nginx/README.md",
+  "issues_url": "https://github.com/tr-heath/travisheath-nginx/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ],
+  "data_provider": null
+}
+
