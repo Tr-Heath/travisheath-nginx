@@ -33,21 +33,21 @@ use the Vagrantfile to create a CentOS environment, which is how I tested the pr
 or clone the project onto an existing CentOS installation.
 
 Steps I took:
-	* Pull down latest from github onto a machine with VirtualBox and Vagrant installed.
-	* Change directory to {your_path}/vagrant
-	* As the su, run vagrant up.
-		This will download - and spin up - a CentOS 7.2 instance.
-	* If you intend to do any development, there are some symlink tasks that I have in provisioning that I found beneficial in workflow. More details in the Development section.
-	* You can connect to the instance with the command: vagrant ssh puppet
-	* sudo su -
-	* Check if Puppet is installed, if it is not, provisioning might not have run correctly. It exists as a script in the /vagrant folder on your new vm. 
-		 Usage: chmod u+x provision.sh
+* Pull down latest from github onto a machine with VirtualBox and Vagrant installed.
+* Change directory to /travisheath-nginx/vagrant
+* Make sure you have superuser privileges, run vagrant up.
+	* This will download - and spin up - a CentOS 7.2 instance.
+* If you intend to do any development, there are some symlink tasks that I have in provisioning that I found beneficial in workflow. More details in the Development section.
+* You can connect to the instance with the command: vagrant ssh puppet
+* sudo su -
+* Check if Puppet is installed, if it is not, provisioning might not have run correctly. It exists as a script in the /vagrant folder on your new vm. 
+	*Usage: chmod u+x provision.sh
 		        ./provision.sh 
-	* cd /etc/puppetlabs/code/environment/production/modules/nginx/examples/
-	* puppet apply init.pp
+* cd /etc/puppetlabs/code/environment/production/modules/nginx/examples/
+* puppet apply init.pp
 
-	To view the page, it should be shown at http://10.0.20.10:8000/ unless you made an ipaddress change to the vagrantfile or something went wrong with the nginx service start.
-	If you add an entry to /etc/hosts on your host machine, you can go to vagrant-test.local.com instead of the ip address (the line I added was 10.0.20.10    vagrant-test.local.com)
+To view the page, it should be shown at http://10.0.20.10:8000/ from a browser on your host machine, unless you made an ipaddress change to the vagrantfile or something went wrong with the nginx service start.
+If you add an entry to /etc/hosts on your host machine, you can go to vagrant-test.local.com instead of the ip address (the line I added was 10.0.20.10    vagrant-test.local.com)
 
 ## Limitations
 
@@ -55,9 +55,9 @@ This has been tested for CentOS only, although could easily be extended to RHEL 
 and then commenting back in the section of the case statement in install.pp that checks for operating system.
 
 ## Development
+RSpec tests need to be brought back to the project in a way that all dependencies are deployed to the project as well. The project needs to robustly handle a greater variety of operating systems. 
 
-After learning about how to use Vagrant it was excellent to work with after implementing the use of symlinks between the default 
-/vagrant linked directory and the working directory on my development environment.
+After learning about how to use Vagrant it was excellent to work with after implementing the use of symlinks between the default /vagrant/ linked directory and the working directory on my development environment.
 
 Please make a note of the vagrantfile and link to the directories you prefer.  
 
