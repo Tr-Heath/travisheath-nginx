@@ -2,7 +2,7 @@
 class nginx::install {
   contain 'nginx::config'
 
-    #add official nginx repo
+  #add official nginx repo
   file {"centos repo":
     ensure  =>  file,
     path  =>  "/etc/yum.repos.d/nginx.repo",

@@ -2,6 +2,6 @@
 class nginx::service {
   service { 'nginx':
     ensure => running,
-    enable => true,
-  }
+    subscribe =>  File["nginx default config"],
+  } 
 }

@@ -31,6 +31,13 @@ class nginx::config{
     require =>  Package["install nginx"],
   }
 
+  file {"nginx dir":
+    ensure  =>  directory,
+    path  =>  "/usr/share/nginx",
+    owner =>  "nginx-user",
+    group =>  "nginx-user",
+  }
+
   file {"site dir":
     ensure  =>  directory,
     path  =>  "/usr/share/nginx/html",

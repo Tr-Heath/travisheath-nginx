@@ -10,8 +10,8 @@
 
 ## Description
 
-This a learning exercise to become more experiences with Puppet configuration management.
-The requirements are to install on to a CentOS node the nginx web server. 
+This a learning exercise to become more experienced with Puppet configuration management.
+The requirements are to install the nginx web server to a CentOS node. 
 
 It should serve the contents of https://github.com/puppetlabs/exercise-webpage/blob/master/index.html
 over port 8000. 
@@ -39,8 +39,15 @@ Steps I took:
 		This will download - and spin up - a CentOS 7.2 instance.
 	* If you intend to do any development, there are some symlink tasks that I have in provisioning that I found beneficial in workflow. More details in the Development section.
 	* You can connect to the instance with the command: vagrant ssh puppet
+	* sudo su -
+	* Check if Puppet is installed, if it is not, provisioning might not have run correctly. It exists as a script in the /vagrant folder on your new vm. 
+		 Usage: chmod u+x provision.sh
+		        ./provision.sh 
 	* cd /etc/puppetlabs/code/environment/production/modules/nginx/examples/
 	* puppet apply init.pp
+
+	To view the page, it should be shown at http://10.0.20.10:8000/ unless you made an ipaddress change to the vagrantfile or something went wrong with the nginx service start.
+	If you add an entry to /etc/hosts on your host machine, you can go to vagrant-test.local.com instead of the ip address (the line I added was 10.0.20.10    vagrant-test.local.com)
 
 ## Limitations
 
